@@ -26,7 +26,8 @@ public class MoodAnalyser {
             } else
                 return "HAPPY";
         } catch (NullPointerException e) {
-            throw new MoodAnalysisException("Entered Invalid Mood");
+            throw new MoodAnalysisException("Entered Invalid Mood",
+                    MoodAnalysisException.ExceptionType.ENTERED_NULL);
         }
     }
 }
