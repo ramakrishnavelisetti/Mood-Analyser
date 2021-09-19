@@ -26,7 +26,7 @@ public class MoodAnalyser {
             } else
                 return "HAPPY";
         } catch (NullPointerException e) {
-            return "Exception Handled";
+            return "Happy";
         }
     }
 }
