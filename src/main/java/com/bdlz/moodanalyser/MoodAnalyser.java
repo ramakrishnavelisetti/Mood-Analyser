@@ -3,7 +3,7 @@ package com.bdlz.moodanalyser;
 public class MoodAnalyser {
     public static String message;
 
-    public MoodAnalyser(String message)  {
+    public MoodAnalyser(String message) throws MoodAnalysisException {
         this.message = message;
     }
 
@@ -19,14 +19,14 @@ public class MoodAnalyser {
 
     }
 
-    public static String analyseMood() {
+    public static String analyseMood() throws MoodAnalysisException {
         try {
             if (message.toLowerCase().contains("sad")) {
                 return "SAD";
             } else
                 return "HAPPY";
         } catch (NullPointerException e) {
-            return "Happy";
+            throw new MoodAnalysisException("Entered Invalid Mood");
         }
     }
 }
